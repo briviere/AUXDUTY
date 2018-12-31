@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "ca.riverboatmedia.auxduty2"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 3
         versionName "3.0"
@@ -30,6 +30,12 @@ dependencies {
     compile 'com.google.firebase:firebase-core:11.2.0'
     compile 'com.google.firebase:firebase-database:11.2.0'
     testCompile 'junit:junit:4.12'
+}
+
+dependencies {
+    def appCenterSdkVersion = '1.11.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 }
 
 

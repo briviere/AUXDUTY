@@ -26,6 +26,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 public class MainScreen extends SimpleActivity {
     private String m_Text;
     private String session_key;
@@ -47,6 +51,9 @@ public class MainScreen extends SimpleActivity {
         ActivityCompat.requestPermissions(MainScreen.this,
                 new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
         pref = getPreferences(MODE_PRIVATE);
+
+        AppCenter.start(getApplication(), "894f1313-ccbb-4c8b-9ef7-26939c3871a7",
+                Analytics.class, Crashes.class);
     }
 
     @Override
